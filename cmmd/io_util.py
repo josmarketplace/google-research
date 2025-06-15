@@ -1,5 +1,5 @@
 # coding=utf-8
-# Copyright 2024 The Google Research Authors.
+# Copyright 2025 The Google Research Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
 
 """IO utilities."""
 
-import glob
+import os
 from cmmd import embedding
 import jax
 import numpy as np
@@ -28,8 +28,8 @@ def _get_image_list(path):
   ext_list = ['png', 'jpg', 'jpeg']
   image_list = []
   for ext in ext_list:
-    image_list.extend(glob.glob(f'{path}/*{ext}'))
-    image_list.extend(glob.glob(f'{path}/*.{ext.upper()}'))
+    image_list.extend(tf.io.gfile.glob(os.path.join(path, f'*{ext}')))
+    image_list.extend(tf.io.gfile.glob(os.path.join(path, f'*.{ext.upper()}')))
   # Sort the list to ensure a deterministic output.
   image_list.sort()
   return image_list
@@ -47,9 +47,13 @@ def _center_crop_and_resize(im, size):
 
 
 def _read_image(path, reshape_to):
-  im = Image.open(path)
+  with tf.io.gfile.GFile(path, 'rb') as f:
+    im = Image.open(f)
+    im.load()
+
   if reshape_to > 0:
     im = _center_crop_and_resize(im, reshape_to)
+
   return np.asarray(im).astype(np.float32)
 
 
@@ -129,7 +133,7 @@ def compute_embeddings_for_dir(
 
   all_embs = []
   for batch in tqdm.tqdm(dataset, total=count // batch_size):
-    image_batch = jax.tree_map(np.asarray, batch)
+    image_batch = jax.tree.map(np.asarray, batch)
 
     # Normalize to the [0, 1] range.
     image_batch = image_batch / 255.0
