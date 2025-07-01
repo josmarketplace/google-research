@@ -20,7 +20,7 @@
     "@storybook/testing-library": "^0.2.1",
     "@types/dagre": "^0.7.52",
     "@types/md5": "^2.3.5",
-    "@types/node": "20.14.8",
+    "@types/node": "24.0.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "babel-loader": "^9.1.3",
