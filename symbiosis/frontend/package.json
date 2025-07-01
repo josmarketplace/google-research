@@ -9,7 +9,7 @@
     "start": "next start -p 8080"},
   "devDependencies": {
     "@babel/core": "^7.24.7",
-    "@mui/icons-material": "^5.15.20",
+    "@mui/icons-material": "^7.1.1",
     "@storybook/addon-actions": "^8.1.10",
     "@storybook/addon-essentials": "^8.1.10",
     "@storybook/addon-interactions": "^8.1.10",
