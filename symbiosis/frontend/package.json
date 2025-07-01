@@ -44,7 +44,7 @@
     "@headlessui/react": "^2.1.2",
     "@heroicons/react": "^2.1.4",
     "@mui/material": "^5.15.20",
-    "@mui/system": "^5.15.20",
+    "@mui/system": "^7.1.1",
     "@mui/x-data-grid": "^7.7.1",
     "@mui/x-data-grid-generator": "^7.7.1",
     "@nextui-org/spinner": "^2.0.34",
