@@ -36,7 +36,7 @@ importlib-metadata==4.11.4
 importlib-resources==5.7.1
 jax==0.3.13
 jaxlib==0.3.10
-keras==2.8.0
+keras==2.13.1
 Keras-Preprocessing==1.1.2
 kiwisolver==1.4.2
 libclang==14.0.1
@@ -46,12 +46,12 @@ ml-collections==0.1.1
 msgpack==1.0.4
 numpy==1.22.4
 oauthlib==3.2.0
-opencv-python==4.5.5.64
+opencv-python==4.8.1.78
 opt-einsum==3.3.0
 optax==0.1.2
 packaging==21.3
 pandas==1.4.2
-Pillow==9.1.1
+Pillow==10.3.0
 portpicker==1.5.0
 promise==2.3
 protobuf==3.19.4
@@ -72,7 +72,7 @@ six==1.16.0
 tensorboard==2.8.0
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.1
-tensorflow==2.8.2
+tensorflow==2.11.1
 tensorflow-datasets==4.6.0
 tensorflow-estimator==2.8.0
 tensorflow-io-gcs-filesystem==0.26.0
